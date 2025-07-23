@@ -4,10 +4,8 @@ This project investigates how spam classifiers can be improved through adversari
 
 ## Project Overview
 We developed two main components:
-
-## Spam Classifier (Defender)
+# Spam Classifier (Defender)
 This component uses both traditional machine learning models and modern transformer-based models to detect whether a message is spam or not. Traditional models include logistic regression and XGBoost, while transformer-based models include pre-trained architectures like BERT.
-
 ## Spam Generator (Adversary)
 This component fine-tunes a large language model to generate spam messages designed to evade the current spam classifier. It uses feedback from the classifier to learn and improve its outputs over time.
 
@@ -19,14 +17,14 @@ This component fine-tunes a large language model to generate spam messages desig
   5. Repeat the process to improve both the classifier and the generator
 
 ## Datasets Used
-SMS Spam Collection (UCI Machine Learning Repository)
+SMS Spam Collection (UCI Machine Learning Repository):
 This dataset contains 5,574 SMS messages labeled as spam or ham. It includes messages from sources like Grumbletext, the NUS SMS Corpus, and Caroline Tagg’s PhD thesis.
 
-Enron Email Dataset
+Enron Email Dataset:
 This dataset includes approximately 500,000 real emails from around 150 Enron employees, mostly in management roles. It is commonly used for research in spam detection and email classification.
 
-Generated Data
+Generated Data:
 We also create synthetic spam messages using a fine-tuned language model trained to avoid the current spam classifier.
 
-Methods and Tools
+Methods and Tools:
 We use the scikit-learn library for traditional models like logistic regression and XGBoost. For transformer models and language model fine-tuning, we use Hugging Face Transformers and PyTorch. Fine-tuning is done using feedback from the classifier as a reward signal. We run training and testing in environments like Google Colab and Modal, where free GPU resources such as T4s are available.
